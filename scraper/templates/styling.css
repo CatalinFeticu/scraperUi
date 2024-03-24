@@ -1,0 +1,13 @@
+div {
+    padding: 1em;
+    background: #2424c6;
+    display: table;
+}
+
+table {
+    width: 100%;
+}
+
+input {
+    width: 150px;
+}
