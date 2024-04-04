@@ -1,12 +1,12 @@
-<table class="table" summary="Display all found queries in db">
+<table class="table table-bordered table-hover" summary="Display all found queries in db">
     <thead class="thead-dark">
     {% for header in header_list%}
-        <th>{{header.name}}</th>
+        <th scope="col">{{header.name}}</th>
     {% endfor %}
     </thead>
     <tbody>
         {% for item in items%}
-        <tr>
+        <tr scope="row">
             {% for val in item.values %}
             <td>{{val}}</td>
             {%endfor%}

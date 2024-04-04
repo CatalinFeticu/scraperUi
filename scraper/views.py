@@ -27,7 +27,7 @@ def scrape_url(request):
         process.start(stop_after_crawl=True, install_signal_handlers=False)      
         process.stop()
 
-        return HttpResponse("URL Scraped :)")
+        return HttpResponse("URL has been scraped")
     
 def home_view(request):
     template = loader.get_template("land_page_scraper.html")
@@ -40,3 +40,14 @@ def load_table(request):
     items= Item.objects.all().values()
     header_list = Item._meta.fields
     return(HttpResponse(template.render({"header_list" : header_list, "items": items})))
+
+def options_bar(request):
+
+    template = loader.get_template("scrape_options.html")
+
+    options = [
+        {"name" : "Altex", "value" : "altex_parse"},
+        {"name" : "Amazon", "value" : "amazon_parse"}
+    ]
+
+    return(HttpResponse(template.render({"options": options})))

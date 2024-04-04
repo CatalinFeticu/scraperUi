@@ -20,12 +20,17 @@
 <html>
 
 <body>
-    <H1>Hello you should have your data below</H1>
-
-    <div class="container" hx-get="/scraper/load_table" hx-trigger="load">
-        <p class="htmx-indicator">Result loading...
-            Please wait.</p>
+    <H1>Please input your desired scraper</H1>
+    <form class="mb-2 ml-3" hx-get="/scraper/load_options", hx-trigger="load">
+        </form>
+    <div class="container-fluid" hx-get="/scraper/load_table" hx-trigger="load">
+        <div class="container">
+            <p class="htmx-indicator">Result loading...
+                Please wait.</p>
+        </div>
     </div>
+
+
 </body>
 
 </html>
